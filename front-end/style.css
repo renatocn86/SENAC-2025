@@ -14,4 +14,21 @@ html, body{
     background-color: cadetblue;
     width: 100%;
     min-height: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#pos{
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+}
+
+.pos{
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: blueviolet;
 }
