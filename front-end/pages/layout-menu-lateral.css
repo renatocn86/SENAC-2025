@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.bottom {
+    width: 100%;
+    flex-direction: row;
+}
+
+.top {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(85, 85, 233);
+}
+
+.menu {
+    width: 30%;
+    height: 400px;
+    background-color: rgb(233, 115, 85);
+}
+
+.square {
+    width: 70%;
+    height: 400px;
+    background-color: rgb(233, 233, 85);
+}
+
+/* .top, .menu, .square{
+    transition: transform 1s, border-radius 1s, background-color 1s;
+}
+
+.top:hover, .menu:hover, .square:hover{
+    transform: rotate(360deg);
+    border-radius: 100%;
+    background-color: red;
+} */
