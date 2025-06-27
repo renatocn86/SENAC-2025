@@ -40,7 +40,7 @@ h2, p{
 .botoes{
     display: flex;
     flex-direction: row;
-    
+    flex-wrap: wrap;
     border: 1px solid #999;
     padding: 2mm;
     border-radius: 5mm;
