@@ -14,3 +14,18 @@ texto = 'Literal'
 classe = 'btn'
 container.innerHTML += `<button class="btn">Literal</button>` // Literal com valores pré-definidos
 container.innerHTML += `<button class="${classe}">${texto}</button>` // Literal com valores dinâmicos
+
+var container2 = document.getElementById('container-2')
+
+container2.innerHTML = `
+        <div class="card">
+
+            <div class="img"></div>
+            
+            <div class="row">
+                <div class="avatar"></div>
+                <p>${texto}</p>
+            </div>
+
+        </div>
+`

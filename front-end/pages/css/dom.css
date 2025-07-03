@@ -20,11 +20,10 @@ body {
 }
 
 .card {
-    width: calc(300px + 6mm);
+    width: 300px;
     padding: 3mm;
     border-radius: 5mm;
     display: flex;
-    gap: 2mm;
     flex-wrap: wrap;
     -webkit-box-shadow: 0px -1px 37px 6px rgba(0, 0, 0, 0.56);
     box-shadow: 0px -1px 37px 6px rgba(0, 0, 0, 0.56);
@@ -35,10 +34,11 @@ body {
 }
 
 .img {
+    margin-bottom: 2mm;
     width: 300px;
     height: 200px;
-    background-image: url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRc_1-MwKl2x5FyyXAdN4IfFmUhVbzf-RbtqjggrO8X1IdPFLrjFynF8uOplQV8WKYS2CzNOf_KYTNwogsBEPWAdZrkAGLItDg0PfD0OV3rbA);
     border-radius: 2mm;
+    background-image: url(../../images/lena.jpg);
     background-size: cover;
 }
 
@@ -51,8 +51,13 @@ body {
     background-size: cover;
 }
 
+.row{
+    display: flex;
+}
+
 p {
-    width: calc(100% - 22mm);
+    width: calc(300px - 20mm);
+    padding-left: 2mm;
 }
 
 #btn,
