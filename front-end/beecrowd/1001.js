@@ -4,5 +4,6 @@ var lines = input.split('\n');//lines é um array
 
 let a = parseInt(lines[0])
 let b = parseInt(lines[1])
+
 let x = a+b
 console.log("X = "+x)
