@@ -11,7 +11,8 @@ class Pessoa {
         this.genero = genero
     }
     exibirDetalhes() {
-        return `ID: ${this.id}, 
+        return `
+                ID: ${this.id}, 
                 Nome: ${this.nome}, 
                 CPF: ${this.cpf}, 
                 Gênero: ${this.genero}`
@@ -26,8 +27,9 @@ class Servidor extends Pessoa {
     }
 
     exibirDetalhes() {
-        return `${super.exibirDetalhes()}, 
-        Cargo: ${this.cargo}`
+        return `
+        ${super.exibirDetalhes()}, 
+            Cargo: ${this.cargo}`
     }
 }
 
@@ -38,8 +40,9 @@ class Professor extends Pessoa {
     }
 
     exibirDetalhes() {
-        return `${super.exibirDetalhes()}, 
-        Disciplina: ${this.disciplina}`
+        return `
+        ${super.exibirDetalhes()}, 
+            Disciplina: ${this.disciplina}`
     }
 }
 
@@ -50,8 +53,9 @@ class Aluno extends Pessoa {
     }
 
     exibirDetalhes() {
-        return `${super.exibirDetalhes()}, 
-        Matricula: ${this.matricula}`
+        return `
+        ${super.exibirDetalhes()}, 
+            Matricula: ${this.matricula}`
     }
 }
 
@@ -60,7 +64,7 @@ function Poo() {
     var professor1 = new Professor(1, "Renato", 88888888888, "Masculino", "Programação web")
     var aluno1 = new Aluno(2, "Jorge", 77777777777, "Masculino", 154896)
 
-    alert(servidor1.exibirDetalhes())
-    alert(professor1.exibirDetalhes())
-    alert(aluno1.exibirDetalhes())
+    alert("Servidor: \n" + servidor1.exibirDetalhes())
+    alert("Professor: \n" + professor1.exibirDetalhes())
+    alert("Aluno: \n" + aluno1.exibirDetalhes())
 }

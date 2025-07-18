@@ -113,3 +113,16 @@ const eletronico1 = new Eletronico(2, "Smartphone X", 2500.00, "TechCorp", 12);
 // Exibindo detalhes (polimorfismo em ação!)
 console.log(livro1.exibirDetalhes());
 console.log(eletronico1.exibirDetalhes());
+
+var array = [2,5,4,6,9,8,0,3,1]
+array.sort()
+alert(array)
+
+//Antonio - bubble sort
+//Jhonatan - Insertion sort
+//Zidane - Quick sort
+//Iago - Selection sort
+//Mateus - Merge sort
+//William - Radix sort
+
+//Apresentar dia 25/07
