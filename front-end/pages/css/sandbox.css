@@ -1,5 +1,14 @@
+
+:root{
+    --gap-4: 4px;
+    --gap-8: 8px;
+    --gap-16: 16px;
+    --gap-32: 32px;
+
+}
+
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
@@ -12,47 +21,121 @@ body {
     height: 100%;
 }
 
-.container {
-    width: 100%;
-    height: 100%;
-}
-
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.game {
+.container {
+    width: 100%;
+    height: 100%;
+    gap: var(--gap-16);
+    flex-wrap: wrap;
+}
+
+.component-container{
     border: 1px solid red;
-    width: 500px;
-    height: 250px;
+    gap: var(--gap-8);
+    padding: var(--gap-8);
+    border-radius: var(--gap-16);
+}
+
+.component-container-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* #region Fading squares - 200*/
+
+.fading-squares {
     display: grid;
-    grid-template-columns: repeat(20, 25px);
-    grid-template-rows: repeat(10, 25px);
+    grid-template-columns: repeat(20, 40px);
+    grid-template-rows: repeat(10, 40px);
 }
 
-.sqr {
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    animation-name: out;
-    animation-duration: 2s;
+.sqr1 {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--gap-8);
+    background-color: rgb(181, 178, 255);
+    transition: background-color 3s;
 }
 
-.sqr:hover {
-
+.sqr1:hover {
     background-color: red;
-    animation-name: in;
-    animation-duration: 5s;
+    transition: background-color 0s;
 }
 
-@keyframe in {
-    from: background-color: white;
-    to: background-color: red;
+/* #endregion */
+
+/* #region Buttons*/
+
+.btn-radius{
+    padding: var(--gap-8);
+    padding-inline: var(--gap-16);
+    background-color: rgb(74, 147, 210);
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    border: 0;
+    transition: border-radius 1s;
 }
 
-@keyframe out {
-    form: background-color: red;
-    to: background-color: white;
+.btn-radius:hover{
+    border-radius: 32px;
 }
+
+.btn-scale{
+    padding: var(--gap-8);
+    padding-inline: var(--gap-16);
+    border-radius: var(--gap-8);
+    background-color: rgb(210, 74, 190);
+    outline: 0;
+    border: 0;
+    color: white;
+    transition: transform 0.5s ease-in-out;
+}
+
+.btn-scale:hover{
+    transform: scale(1.2);
+}
+
+.btn-skew{
+    display: flex;
+    flex-grow: 1;
+    border-radius: var(--gap-8);
+    padding: var(--gap-16);
+    outline: 2px solid black;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s;
+}
+
+.btn-skew:hover{
+    color: white;
+}
+
+.btn-skew::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0;
+    height: 100%;
+    background-color: black;
+    transform: skewX(25deg);
+    z-index: -1;
+    transition: width 1s;
+}
+
+.btn-skew:hover::before{
+    width: 200px;
+}
+
+/* #endregion */
+
+/* #region */
+
+/* #endregion */
