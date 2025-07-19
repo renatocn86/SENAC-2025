@@ -1,5 +1,4 @@
-
-:root{
+:root {
     --gap-4: 4px;
     --gap-8: 8px;
     --gap-16: 16px;
@@ -34,14 +33,14 @@ body {
     flex-wrap: wrap;
 }
 
-.component-container{
+.component-container {
     border: 1px solid red;
     gap: var(--gap-8);
     padding: var(--gap-8);
     border-radius: var(--gap-16);
 }
 
-.component-container-flex{
+.component-container-flex {
     display: flex;
     flex-wrap: wrap;
 }
@@ -71,7 +70,7 @@ body {
 
 /* #region Buttons*/
 
-.btn-radius{
+.btn-radius {
     padding: var(--gap-8);
     padding-inline: var(--gap-16);
     background-color: rgb(74, 147, 210);
@@ -82,11 +81,11 @@ body {
     transition: border-radius 1s;
 }
 
-.btn-radius:hover{
+.btn-radius:hover {
     border-radius: 32px;
 }
 
-.btn-scale{
+.btn-scale {
     padding: var(--gap-8);
     padding-inline: var(--gap-16);
     border-radius: var(--gap-8);
@@ -94,14 +93,16 @@ body {
     outline: 0;
     border: 0;
     color: white;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s;
 }
 
-.btn-scale:hover{
+.btn-scale:hover {
     transform: scale(1.2);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
 }
 
-.btn-skew{
+.btn-skew {
     display: flex;
     flex-grow: 1;
     border-radius: var(--gap-8);
@@ -113,11 +114,11 @@ body {
     transition: color 1s;
 }
 
-.btn-skew:hover{
+.btn-skew:hover {
     color: white;
 }
 
-.btn-skew::before{
+.btn-skew::before {
     content: '';
     position: absolute;
     top: 0;
@@ -130,7 +131,7 @@ body {
     transition: width 1s;
 }
 
-.btn-skew:hover::before{
+.btn-skew:hover::before {
     width: 200px;
 }
 
