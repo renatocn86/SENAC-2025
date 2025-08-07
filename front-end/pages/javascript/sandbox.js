@@ -84,8 +84,51 @@ btnSkew.textContent = "SKEW BUTTON"
 
 divB.append(btnScale, btnRadius, btnSkew)
 panelButtons.appendChild(divB)
+container.append(panelButtons)
 
 // #endregion
 
-container.append(panelButtons)
+//#region MENUS
+const panelMenus = document.createDocumentFragment()
+const divM = document.createElement('div')
+divM.classList.add('component-container', 'component-container-flex')
+
+const spinMenu = document.createElement('div')
+spinMenu.className = 'spin-container'
+
+const menuItemsList = ['Início', 'Quem somos', 'Serviços', 'Planos', 'Login']
+
+for (let i = 0; i < menuItemsList.length; i++) {
+    let spinItem = document.createElement('div')
+    spinItem.className = 'spinner'
+    spinItem.textContent = menuItemsList[i]
+    spinMenu.appendChild(spinItem)
+}
+
+const mouseoverEvent = new MouseEvent('mouseover', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+});
+
+const mouseoutEvent = new MouseEvent('mouseout', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+});
+
+divM.addEventListener('mouseenter', () => {
+    console.log('enter')
+    let spinners = document.querySelectorAll('.spinner')
+    console.log(spinners)
+    for (let i = 0; i < spinners.length; i++) {
+        spinners[i].style
+    }
+})
+
+divM.appendChild(spinMenu)
+panelMenus.appendChild(divM)
+container.appendChild(panelMenus)
+//#endregion
+
 // })

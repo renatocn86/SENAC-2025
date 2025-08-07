@@ -68,7 +68,7 @@ body {
 
 /* #endregion */
 
-/* #region Buttons*/
+/* #region BUTTONS*/
 
 .btn-radius {
     padding: var(--gap-8);
@@ -137,6 +137,29 @@ body {
 
 /* #endregion */
 
-/* #region */
+/* #region MENUS*/
+.spin-container{
+    display: block;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #999;
+    border-radius: var(--gap-8);
+}
+
+.spinner{
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    border: 1px solid #999;
+    transform-origin: 100% 0%;
+    transition: transform 1s;
+    background-color: #99aa99;
+    border-radius: var(--gap-8);
+    
+}
+
+.spinner:hover{
+    transform: rotate(-30deg);
+}
 
 /* #endregion */
