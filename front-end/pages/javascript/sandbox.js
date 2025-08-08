@@ -150,7 +150,7 @@ const roleta = document.createElement('div')
 roleta.className = 'roleta'
 
 const roda = document.createElement('div')
-roda.className= 'roda'
+roda.className = 'roda'
 
 const menuItem1 = document.createElement('a')
 menuItem1.textContent = 'Menu Item 1'
@@ -159,17 +159,27 @@ menuItem2.textContent = 'Menu Item 2'
 const menuItem3 = document.createElement('a')
 menuItem3.textContent = 'Menu Item 3'
 
-roleta.addEventListener('mousemove', (event)=>{
-    let rect = roleta.getBoundingClientRect()
-    console.log(rect.x+200 +" "+rect.y+200)
-    console.log(event.clientX+" "+event.clientY )
+const rodaPointer = document.createElement('div')
+rodaPointer.className = 'roda-pointer'
 
-    let angulo = (rect)
-    roda.style.transform = `rotate(${angulo}deg)`
-    
+roda.appendChild(rodaPointer)
+
+roleta.addEventListener('mousemove', (event) => {
+    let rect = roleta.getBoundingClientRect()
+    let boxCenterX = rect.left + rect.width / 2
+    let boxCenterY = rect.top + rect.height / 2
+
+    let angulo = Math.atan2(event.clientY - boxCenterY, event.clientX - boxCenterX) * 180 / Math.PI
+
+    let transform = `rotate(${angulo+45}deg)`
+    roda.style.transform = transform;
+    roda.style.webkitTransform = transform;
+    roda.style.msTransform = transform;
 })
 
-roleta.append(document.createElement('div'), menuItem1, document.createElement('div'),menuItem2, roda, menuItem3)
+roda.appendChild
+
+roleta.append(document.createElement('div'), menuItem1, document.createElement('div'), menuItem2, roda, menuItem3)
 
 divMenus.appendChild(roleta)
 

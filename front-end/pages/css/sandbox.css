@@ -230,7 +230,6 @@ body {
     align-items: center;
 }
 
-
 .roleta:nth-child(0) {
     grid-area: 1 / 2 / 2 / 3;
 }
@@ -242,29 +241,23 @@ body {
 .roda {
     background-color: #337033;
     border-radius: 50%;
-    border-top: 3px solid red;
+    border-top-right-radius: 0;
     grid-area: 2 / 2 / 3 / 3;
+    transform-origin: center center;
+}
+
+.roda-pointer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    border-bottom-left-radius: 100%;
 }
 
 .roleta:nth-child(3) {
     grid-area: 2 / 3 / 3 / 4;
-}
-
-
-
-/* #endregion */
-
-
-
-.modal {
-    display: none;
-    width: 300px;
-    height: 300px;
-    border-radius: 25px;
-    background-color: red;
-    position: fixed;
-    top: 40%;
-    left: 40%;
 }
 
 /* #endregion */
