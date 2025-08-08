@@ -99,8 +99,84 @@ btnRotate2.appendChild(btnRotate2Text)
 
 divB.append(btnScale, btnRadius, btnSkew, btnTranslate, btnRotate, btnRotate2)
 panelButtons.appendChild(divB)
+container.append(panelButtons)
 
 // #endregion
 
-container.append(panelButtons)
+//#region MENUS
+const panelMenus = document.createDocumentFragment()
+const divMenus = document.createElement('div')
+divMenus.classList.add('component-container', 'component-container-flex')
+// Rotate menu 'leque'
+const spinMenu = document.createElement('div')
+spinMenu.className = 'spin-container'
+
+const menuItemsList = ['Início', 'Quem somos', 'Serviços', 'Planos', 'Login']
+
+for (let i = 0; i < menuItemsList.length; i++) {
+    let spinItem = document.createElement('div')
+    spinItem.className = 'spinner'
+    spinItem.textContent = menuItemsList[i]
+    spinMenu.appendChild(spinItem)
+}
+
+spinMenu.addEventListener('mouseenter', () => {
+    let spinners = document.querySelectorAll('.spinner')
+    let r = 0;
+    for (let i = 0; i < spinners.length; i++) {
+        let transform = `rotate(${r}deg)`
+        spinners[i].style.transform = transform;
+        spinners[i].style.webkitTransform = transform;
+        spinners[i].style.msTransform = transform;
+        r += -30
+    }
+})
+spinMenu.addEventListener('mouseleave', () => {
+    let spinners = document.querySelectorAll('.spinner')
+    let r = 0;
+    for (let i = 0; i < spinners.length; i++) {
+        let transform = `rotate(${r}deg)`
+        spinners[i].style.transform = transform;
+        spinners[i].style.webkitTransform = transform;
+        spinners[i].style.msTransform = transform;
+
+    }
+})
+divMenus.appendChild(spinMenu)
+
+// Menu rotate 'roleta'
+
+const roleta = document.createElement('div')
+roleta.className = 'roleta'
+
+const roda = document.createElement('div')
+roda.className= 'roda'
+
+const menuItem1 = document.createElement('a')
+menuItem1.textContent = 'Menu Item 1'
+const menuItem2 = document.createElement('a')
+menuItem2.textContent = 'Menu Item 2'
+const menuItem3 = document.createElement('a')
+menuItem3.textContent = 'Menu Item 3'
+
+roleta.addEventListener('mousemove', (event)=>{
+    let rect = roleta.getBoundingClientRect()
+    console.log(rect.x+200 +" "+rect.y+200)
+    console.log(event.clientX+" "+event.clientY )
+
+    let angulo = (rect)
+    roda.style.transform = `rotate(${angulo}deg)`
+    
+})
+
+roleta.append(document.createElement('div'), menuItem1, document.createElement('div'),menuItem2, roda, menuItem3)
+
+divMenus.appendChild(roleta)
+
+panelMenus.appendChild(divMenus)
+container.appendChild(panelMenus)
+
+//#endregion
+
+
 // })
