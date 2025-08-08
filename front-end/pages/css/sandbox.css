@@ -3,7 +3,11 @@
     --gap-8: 8px;
     --gap-16: 16px;
     --gap-32: 32px;
-
+    --gray-3: #333;
+    --gray-6: #666;
+    --gray-9: #999;
+    --gray-c: #ccc;
+    
 }
 
 * {
@@ -11,6 +15,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
 }
 
 html,
@@ -18,6 +23,7 @@ body {
     width: 100%;
     min-height: 100vh;
     height: 100%;
+    padding: 20px;
 }
 
 .center {
@@ -36,7 +42,7 @@ body {
 .component-container {
     border: 1px solid red;
     gap: var(--gap-8);
-    padding: var(--gap-8);
+    padding: var(--gap-16);
     border-radius: var(--gap-16);
 }
 
@@ -70,14 +76,22 @@ body {
 
 /* #region Buttons*/
 
-.btn-radius {
-    padding: var(--gap-8);
-    padding-inline: var(--gap-16);
-    background-color: rgb(74, 147, 210);
+[class^='btn']{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #333;
     color: white;
-    font-weight: 800;
-    font-size: 16px;
-    border: 0;
+    border: 1px solid #666;
+}
+
+[class^='btn']:hover{
+    background-color: var(--gray-9);
+    border: 1px solid var(--gray-c);
+    color: black;
+}
+
+.btn-radius {
+    border-radius: 0;
     transition: border-radius 1s;
 }
 
@@ -86,13 +100,6 @@ body {
 }
 
 .btn-scale {
-    padding: var(--gap-8);
-    padding-inline: var(--gap-16);
-    border-radius: var(--gap-8);
-    background-color: rgb(210, 74, 190);
-    outline: 0;
-    border: 0;
-    color: white;
     transition: transform 0.5s ease-in-out, box-shadow 0.5s;
 }
 
@@ -102,7 +109,7 @@ body {
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
 }
 
-.btn-skew {
+.bt-skew {
     display: flex;
     flex-grow: 1;
     border-radius: var(--gap-8);
@@ -114,11 +121,11 @@ body {
     transition: color 1s;
 }
 
-.btn-skew:hover {
+.bt-skew:hover {
     color: white;
 }
 
-.btn-skew::before {
+.bt-skew::before {
     content: '';
     position: absolute;
     top: 0;
@@ -131,8 +138,39 @@ body {
     transition: width 1s;
 }
 
-.btn-skew:hover::before {
+.bt-skew:hover::before {
     width: 200px;
+}
+
+.btn-translate, .btn-rotate, .btn-rotate2{
+    transition: transform 1s ease-in-out, 
+                background-color 1s,
+                border 1s, 
+                color 1s;
+}
+
+.btn-translate:hover{
+    transform: translateY(-20px);
+}
+
+.btn-rotate2{
+    padding: 0;
+    padding-block: 0;   
+}
+
+.btn-rotate:hover, .btn-rotate2:hover{
+    backface-visibility: hidden;
+    transform: rotate(360deg);
+}
+
+.bt-text {
+    color: white;
+    background-color: rgba(51, 51, 51, 0);
+    border: 0;
+    transition: transform 1s ease-in-out;
+}
+.bt-text:hover{
+    transform: rotate(-360deg);
 }
 
 /* #endregion */

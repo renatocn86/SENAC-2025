@@ -79,10 +79,25 @@ btnRadius.className = 'btn-radius'
 btnRadius.textContent = 'ROUND CORNERS'
 
 const btnSkew = document.createElement('a')
-btnSkew.className = 'btn-skew'
+btnSkew.className = 'bt-skew'
 btnSkew.textContent = "SKEW BUTTON"
 
-divB.append(btnScale, btnRadius, btnSkew)
+const btnTranslate = document.createElement('button')
+btnTranslate.className = 'btn-translate'
+btnTranslate.textContent = 'TRANSLATEY'
+
+const btnRotate = document.createElement('button')
+btnRotate.className = 'btn-rotate'
+btnRotate.textContent = 'ROTATE'
+
+const btnRotate2 = document.createElement('button')
+const btnRotate2Text = document.createElement('button')
+btnRotate2.className = 'btn-rotate2'
+btnRotate2Text.classList = 'bt-text'
+btnRotate2Text.textContent = 'ROTATE2'
+btnRotate2.appendChild(btnRotate2Text)
+
+divB.append(btnScale, btnRadius, btnSkew, btnTranslate, btnRotate, btnRotate2)
 panelButtons.appendChild(divB)
 
 // #endregion
