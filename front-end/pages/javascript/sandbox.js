@@ -52,7 +52,7 @@ var cont = 0
 function update() {
     var randomIndex = Math.floor(Math.random() * 199) + 1
     drawItem(sqrs[randomIndex])
-    console.log(cont++)
+    // console.log(cont++)
 }
 
 function drawItem(item) {
@@ -112,7 +112,7 @@ const spinMenu = document.createElement('div')
 spinMenu.className = 'spin-container'
 
 const menuItemsList = ['Início', 'Quem somos', 'Serviços', 'Planos', 'Login']
-
+menuItemsList.reverse()
 for (let i = 0; i < menuItemsList.length; i++) {
     let spinItem = document.createElement('div')
     spinItem.className = 'spinner'
@@ -152,12 +152,16 @@ roleta.className = 'roleta'
 const roda = document.createElement('div')
 roda.className = 'roda'
 
-const menuItem1 = document.createElement('a')
-menuItem1.textContent = 'Menu Item 1'
-const menuItem2 = document.createElement('a')
-menuItem2.textContent = 'Menu Item 2'
-const menuItem3 = document.createElement('a')
-menuItem3.textContent = 'Menu Item 3'
+const menuItem = []
+const menuItemHolder = []
+for (let i = 0; i < 3; i++) {
+    let dm = document.createElement('div')
+    let a = document.createElement('a')
+    a.textContent = 'Menu Item ' + (i + 1)
+    menuItem.push(a)
+    dm.appendChild(a)
+    menuItemHolder.push(dm)
+}
 
 const rodaPointer = document.createElement('div')
 rodaPointer.className = 'roda-pointer'
@@ -171,22 +175,65 @@ roleta.addEventListener('mousemove', (event) => {
 
     let angulo = Math.atan2(event.clientY - boxCenterY, event.clientX - boxCenterX) * 180 / Math.PI
 
-    let transform = `rotate(${angulo+45}deg)`
+    let transform = `rotate(${angulo + 45}deg)`
     roda.style.transform = transform;
     roda.style.webkitTransform = transform;
     roda.style.msTransform = transform;
+    console.log(angulo)
+    selectBtn(menuItem, angulo)
+
 })
+function selectBtn(m, ang) {
+    if (ang > -120 && ang < -60) {
+        m[0].style.backgroundColor = '#337033'
+        m[0].style.color = 'white'
+    } else {
+        m[0].style.backgroundColor = 'white'
+        m[0].style.color = '#000'
+    }
 
-roda.appendChild
+    if (ang > 150 || ang < -150) {
+        m[1].style.backgroundColor = '#337033'
+        m[1].style.color = 'white'
+    } else {
+        m[1].style.backgroundColor = 'white'
+        m[1].style.color = '#000'
+    }
 
-roleta.append(document.createElement('div'), menuItem1, document.createElement('div'), menuItem2, roda, menuItem3)
+    if (ang > -30 && ang < 30) {
+        m[2].style.backgroundColor = '#337033'
+        m[2].style.color = 'white'
+    } else {
+        m[2].style.backgroundColor = 'white'
+        m[2].style.color = '#000'
+    }
+}
 
+roleta.append(document.createElement('div'), menuItemHolder[0], document.createElement('div'), menuItemHolder[1], roda, menuItemHolder[2])
 divMenus.appendChild(roleta)
+
+//
 
 panelMenus.appendChild(divMenus)
 container.appendChild(panelMenus)
 
 //#endregion
 
+//#region Paralax
+
+const panelParalax = document.createDocumentFragment()
+const divParalax = document.createElement('div')
+divParalax.classList.add('panelParalax', 'component-container', 'component-container-flex')
+
+for (let i = 0; i < 4; i++) {
+    let dpx = document.createElement('div')
+    dpx.textContent = 'adkaskdk'
+    divParalax.appendChild(dpx)
+
+}
+
+panelParalax.appendChild(divParalax)
+container.appendChild(panelParalax)
+//#endregion
 
 // })

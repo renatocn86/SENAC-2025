@@ -202,7 +202,8 @@ body {
     border-radius: var(--gap-4) 25px 25px var(--gap-4);
     display: flex;
     padding: 15px;
-    transition: transform 0.5s, background-color 0.5s, text-weight 0.5s;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s, text-weight 0.5s;
 }
 
 .spinner:hover {
@@ -212,22 +213,34 @@ body {
 /* roleta */
 
 .roleta {
-    width: 400px;
+    padding: 10px;
+    width: 600px;
     height: 400px;
     border: 1px solid #999;
     border-radius: var(--gap-8);
     display: grid;
     justify-content: center;
-    grid-template-columns: 100px 180px 100px;
-    grid-template-rows: 100px 180px;
+    grid-template-columns: 150px 230px 150px;
+    grid-template-rows: 150px 230px;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    gap: 20px;
 }
+/* .roleta:hover{
+    cursor: none;
+} */
 
 .roleta *{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: var(--gap-8);
+    box-sizing: content-box;
+}
+
+.roleta a{
+    padding: 15px;
+    padding-inline: 30px;
 }
 
 .roleta:nth-child(0) {
@@ -244,6 +257,11 @@ body {
     border-top-right-radius: 0;
     grid-area: 2 / 2 / 3 / 3;
     transform-origin: center center;
+    margin: 25px;
+}
+
+.roleta:nth-child(3) {
+    grid-area: 2 / 3 / 3 / 4;
 }
 
 .roda-pointer{
@@ -253,11 +271,54 @@ body {
     width: 25px;
     height: 25px;
     background-color: red;
+    border-radius: 0;
     border-bottom-left-radius: 100%;
 }
 
-.roleta:nth-child(3) {
-    grid-area: 2 / 3 / 3 / 4;
+
+/* #endregion */
+
+
+/* #region */
+
+.panelParalax{
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panelParalax *{
+    position: absolute;
+    
+    width: 350px;
+    height: 350px;
+}
+
+.panelParalax:nth-child(0){
+    width: 350px;
+    height: 350px;
+    background-color: #994545;
+}
+
+.panelParalax:nth-child(1){
+    width: 300px;
+    height: 300px;
+    background-color: #c56868;
+}
+
+.panelParalax:nth-child(2){
+    width: 250px;
+    height: 250px;
+    background-color: #ef9191;
+}
+
+.panelParalax:nth-child(3){
+    width: 200px;
+    height: 200px;
+    background-color: #ffc1c1;
 }
 
 /* #endregion */
