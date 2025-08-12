@@ -270,7 +270,7 @@ body {
     right: 0;
     width: 25px;
     height: 25px;
-    background-color: red;
+    background-color: rgb(139, 37, 207);
     border-radius: 0;
     border-bottom-left-radius: 100%;
 }
