@@ -227,11 +227,20 @@ divParalax.classList.add('panelParalax', 'component-container', 'component-conta
 
 for (let i = 0; i < 4; i++) {
     let dpx = document.createElement('div')
-    dpx.textContent = 'adkaskdk'
-    dpx.className = "dpx"+i
+    dpx.className = "dpx" + i
     divParalax.appendChild(dpx)
-
 }
+
+panelParalax.addEventListener('mousemove', (e) => {
+    let rect = e.getBoundingClientRect()
+    let boxCenterX = rect.left + rect.width / 2
+    let boxCenterY = rect.top + rect.height / 2
+    
+    self.style.transform = 'translateX('+(e.clientX - boxCenterX)/10+')'
+    self.style.transform = 'translateY('+(e.clientY - boxCenterY)/10+')'
+
+    console.log(x + ' ' + y)
+})
 
 panelParalax.appendChild(divParalax)
 container.appendChild(panelParalax)

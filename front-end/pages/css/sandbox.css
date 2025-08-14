@@ -279,17 +279,17 @@ body {
 /* #endregion */
 
 
-/* #region */
+/* #region PARALAX */
 
 .panelParalax{
-    width: 400px;
-    height: 400px;
-    padding: 10px;
+    width: 386px;
+    height: 386px;
 }
 
 .panelParalax *{
     border-radius: var(--gap-8);
     position: absolute;
+    transition: transform 1s;
 }
 
 .dpx0{
