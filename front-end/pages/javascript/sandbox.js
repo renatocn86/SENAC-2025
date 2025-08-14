@@ -223,11 +223,12 @@ container.appendChild(panelMenus)
 
 const panelParalax = document.createDocumentFragment()
 const divParalax = document.createElement('div')
-divParalax.classList.add('panelParalax', 'component-container', 'component-container-flex')
+divParalax.classList.add('panelParalax', 'component-container', 'component-container-flex', 'center')
 
 for (let i = 0; i < 4; i++) {
     let dpx = document.createElement('div')
     dpx.textContent = 'adkaskdk'
+    dpx.className = "dpx"+i
     divParalax.appendChild(dpx)
 
 }

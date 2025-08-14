@@ -285,37 +285,33 @@ body {
     width: 400px;
     height: 400px;
     padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .panelParalax *{
+    border-radius: var(--gap-8);
     position: absolute;
-    
-    width: 350px;
-    height: 350px;
 }
 
-.panelParalax:nth-child(0){
+.dpx0{
+    position: absolute;
     width: 350px;
     height: 350px;
     background-color: #994545;
 }
 
-.panelParalax:nth-child(1){
+.dpx1{
     width: 300px;
     height: 300px;
     background-color: #c56868;
 }
 
-.panelParalax:nth-child(2){
+.dpx2{
     width: 250px;
     height: 250px;
     background-color: #ef9191;
 }
 
-.panelParalax:nth-child(3){
+.dpx3{
     width: 200px;
     height: 200px;
     background-color: #ffc1c1;
