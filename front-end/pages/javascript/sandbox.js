@@ -225,21 +225,34 @@ const panelParalax = document.createDocumentFragment()
 const divParalax = document.createElement('div')
 divParalax.classList.add('panelParalax', 'component-container', 'component-container-flex', 'center')
 
+const dpxs = []
+
 for (let i = 0; i < 4; i++) {
     let dpx = document.createElement('div')
     dpx.className = "dpx" + i
+    dpxs.push(dpx)
     divParalax.appendChild(dpx)
 }
 
-panelParalax.addEventListener('mousemove', (e) => {
-    let rect = e.getBoundingClientRect()
+divParalax.addEventListener('mousemove', (e) => {
+    let rect = divParalax.getBoundingClientRect()
     let boxCenterX = rect.left + rect.width / 2
     let boxCenterY = rect.top + rect.height / 2
-    
-    self.style.transform = 'translateX('+(e.clientX - boxCenterX)/10+')'
-    self.style.transform = 'translateY('+(e.clientY - boxCenterY)/10+')'
 
-    console.log(x + ' ' + y)
+    for (let i = 0; i < dpxs.length; i++) {
+        let a = (i+1)*2
+        dpxs[i].style.transform = 'translate(' + (e.clientX - boxCenterX) / a + 'px,' + (e.clientY - boxCenterY) / a + 'px)'
+        dpxs[i].style.webkitTransform = 'translate(' + (e.clientX - boxCenterX) / a + 'px,' + (e.clientY - boxCenterY) / a + 'px)'
+        dpxs[i].style.msTransform = 'translate(' + (e.clientX - boxCenterX) / a + 'px,' + (e.clientY - boxCenterY) / a + 'px)'
+    }
+
+    // dpxs[3].style.transform = 'translateY('+(e.clientY - boxCenterY)/2+'px)'
+    // dpxs[3].style.webkitTransform = 'translateY('+(e.clientY - boxCenterY)/2+'px)'
+    // dpxs[3].style.msTransform = 'translateY('+(e.clientY - boxCenterY)/2+'px)'
+
+    console.log(e.clientX + ', ' + e.clientY + " | "
+        + boxCenterX + ", " + boxCenterY + " | "
+        + (e.clientX - boxCenterX) + ", " + (e.clientY - boxCenterY))
 })
 
 panelParalax.appendChild(divParalax)

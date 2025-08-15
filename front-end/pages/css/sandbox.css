@@ -289,7 +289,6 @@ body {
 .panelParalax *{
     border-radius: var(--gap-8);
     position: absolute;
-    transition: transform 1s;
 }
 
 .dpx0{
