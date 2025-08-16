@@ -239,11 +239,15 @@ divParalax.addEventListener('mousemove', (e) => {
     let boxCenterX = rect.left + rect.width / 2
     let boxCenterY = rect.top + rect.height / 2
 
-    for (let i = 0; i < dpxs.length; i++) {
-        let a = (i+1)*2
-        dpxs[i].style.transform = 'translate(' + (e.clientX - boxCenterX) / a + 'px,' + (e.clientY - boxCenterY) / a + 'px)'
-        dpxs[i].style.webkitTransform = 'translate(' + (e.clientX - boxCenterX) / a + 'px,' + (e.clientY - boxCenterY) / a + 'px)'
-        dpxs[i].style.msTransform = 'translate(' + (e.clientX - boxCenterX) / a + 'px,' + (e.clientY - boxCenterY) / a + 'px)'
+    let mx = (e.clientX - boxCenterX) + 100
+    let my = (e.clientY - boxCenterY) + 100
+
+    for (let i = dpxs.length; i >=0; i++) {
+        let a = (i+1)*2// lista invertida
+        console.log(a)
+        dpxs[i].style.transform = 'translate(' + mx / a + 'px,' + my / a + 'px)'
+        dpxs[i].style.webkitTransform = 'translate(' + mx / a + 'px,' + my / a + 'px)'
+        dpxs[i].style.msTransform = 'translate(' + mx / a + 'px,' + my / a + 'px)'
     }
 
     // dpxs[3].style.transform = 'translateY('+(e.clientY - boxCenterY)/2+'px)'
